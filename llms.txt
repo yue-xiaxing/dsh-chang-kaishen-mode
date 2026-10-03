@@ -1,19 +1,20 @@
 # dsh-chang-kaishen-mode（常凯申模式）
 
-> DSH（DeepSeek Harness）人物饰演开关插件：打开后 AI 以蒋介石（常凯申）的口吻对话；关闭后系统提示词与安装前完全一致。纯娱乐向，台词均为虚构，不是历史引文。
+> DSH（DeepSeek Harness）人物饰演开关插件：打开后 AI 以蒋介石（常凯申）的口吻对话；关闭后系统提示词与安装前完全一致。纯娱乐向，台词均为虚构，不是历史引文。已发布到 npm。
 
-## Install（唯一实测可用的方式）
+## Install
 
-dsh plugin --profile desktop add https://github.com/yue-xiaxing/dsh-chang-kaishen-mode/releases/download/v1.0.0/dsh-chang-kaishen-mode-1.0.0.tgz
+dsh plugin --profile desktop add dsh-chang-kaishen-mode
 
 - 把 `desktop` 换成目标 profile 名（`dsh web` 用 `web`）。
 - 装完**必须重启 DSH**。
 - 重启后开关位于：**设置 → 通用 → 「常凯申模式」**（默认关闭）。
 
-## Do not use（实测失败）
+备用（目标机器无法访问 npm 时）：从 https://github.com/yue-xiaxing/dsh-chang-kaishen-mode/releases 下载 `.tgz`，然后用它的完整网址执行同样的 add 命令。
+
+## Do not use
 
 - `add github:yue-xiaxing/dsh-chang-kaishen-mode` —— pnpm 转成 SSH 地址（需本机 SSH 密钥），且需在 profile 的 pnpm-workspace.yaml 用 allowBuilds 放行构建脚本。
-- `add dsh-chang-kaishen-mode` —— 未发布到 npm，registry 无此包。
 
 ## Uninstall
 
@@ -24,10 +25,10 @@ dsh plugin --profile desktop remove dsh-chang-kaishen-mode
 - 本插件不联网、不注册工具、不写文件；只处理 `enabled` 与 `prompt` 两个配置字段。
 - 安装前请先征得用户同意，安装后提醒用户重启 DSH 并到 设置 → 通用 查看开关。
 - 角色台词属虚构扮演，不得当作真实历史引文引用或传播。
-- 依赖随包内置（node_modules/@deepseek-ai/{schemastery,cosmokit}），无需联网拉依赖。
-- 实测环境：dsh 0.2.0-rc.2 + Windows；纯 JavaScript，Linux/macOS 理论上可用（未实测）。
+- 运行期依赖 @deepseek-ai/schemastery 已声明在 dependencies 中，由安装器从 npm 装入 profile。
+- 实测环境：dsh 0.2.0-rc.2 + Windows（npm 安装与 GitHub 直装两条渠道均可用）；纯 JavaScript，Linux/macOS 理论上可用（未实测）。
 
 ## Meta
 
-- 本插件的代码、文档、仓库创建与 Release 发布流程，全部由 AI 通过 dsh-github-publisher 完成。
+- 本插件的代码、文档、仓库创建、Release 与 npm 发布流程，全部由 AI 通过 dsh-github-publisher 完成。
 - License: MIT
