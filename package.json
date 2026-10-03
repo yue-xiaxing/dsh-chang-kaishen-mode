@@ -1,7 +1,6 @@
 {
   "name": "dsh-chang-kaishen-mode",
   "version": "1.0.0",
-  "private": true,
   "description": "常凯申模式：一个纯娱乐向的人物饰演开关，打开后自动向 AI 注入蒋介石（常凯申）角色扮演提示词。",
   "keywords": [
     "dsh",
@@ -41,6 +40,14 @@
   "dependencies": {
     "@deepseek-ai/cosmokit": "1.8.5",
     "@deepseek-ai/schemastery": "3.18.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yue-xiaxing/dsh-chang-kaishen-mode.git"
+  },
+  "homepage": "https://github.com/yue-xiaxing/dsh-chang-kaishen-mode#readme",
+  "bugs": {
+    "url": "https://github.com/yue-xiaxing/dsh-chang-kaishen-mode/issues"
   },
   "license": "MIT"
 }
